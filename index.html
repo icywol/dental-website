@@ -9,14 +9,16 @@
         :root { --gold: #C5A368; --dark: #1a1a1a; --gray: #666; --light: #f4f7f6; }
         body { font-family: 'Inter', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; scroll-behavior: smooth; }
         
+        /* Navigation */
         header { 
             position: sticky; top: 0; background: white; display: flex; justify-content: space-between; 
             align-items: center; padding: 15px 5%; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000;
         }
         .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.9rem; }
         
+        /* Hero Section */
         .hero { 
-            height: 75vh; display: flex; align-items: center; justify-content: center;
+            height: 70vh; display: flex; align-items: center; justify-content: center;
             text-align: center; color: white; padding: 0 20px;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
             url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80'); 
@@ -24,33 +26,35 @@
         }
         .hero h1 { font-size: 3.5rem; margin-bottom: 10px; font-weight: 700; }
 
-        .btn { background: var(--gold); color: white; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: 600; transition: 0.3s; display: inline-block; }
+        .btn { background: var(--gold); color: white; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: 600; transition: 0.3s; display: inline-block; border: none; }
         .btn:hover { background: #b08f5a; transform: translateY(-2px); }
 
         .section-padding { padding: 80px 10%; }
         h2 { font-size: 2.2rem; text-align: center; margin-bottom: 40px; }
 
-        /* Insurance Section */
+        /* Insurance Logos */
         .insurance-bar { background: white; padding: 40px 5%; display: flex; justify-content: space-around; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #eee; }
         .insurance-bar span { font-weight: 700; color: #ccc; font-size: 1.5rem; letter-spacing: 1px; }
 
         /* Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .service-card { background: white; padding: 30px; border-radius: 8px; border: 1px solid #eee; transition: 0.3s; }
-        .service-card:hover { border-color: var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .service-card h3 { color: var(--gold); margin-top: 0; }
 
-        /* About Section */
-        .about { background: var(--light); display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 300px; }
+        /* Gallery */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item img { width: 50%; border-radius: 4px; }
 
-        /* Form */
+        /* Form & Contact */
         .contact-container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
         input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
 
         footer { background: #111; color: #999; padding: 60px 10% 20px; font-size: 0.9rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
         footer h4 { color: white; margin-bottom: 20px; }
+
+        /* Mobile Floating Button */
+        .mobile-call { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 2000; display: flex; align-items: center; gap: 10px; }
     </style>
 </head>
 <body>
@@ -59,7 +63,7 @@
         <div style="font-weight: 700; font-size: 1.4rem;">CAL DENTAL <span style="color:var(--gold)">IRVINE</span></div>
         <div class="nav-links">
             <a href="#services">Services</a>
-            <a href="#about">About</a>
+            <a href="#results">Results</a>
             <a href="#contact" class="btn">Schedule Now</a>
         </div>
     </header>
@@ -67,7 +71,7 @@
     <section class="hero">
         <div>
             <h1>Family Owned for 25+ Years</h1>
-            <p>Expert Dental Care led by Dr. Anko Hsiao & KK</p>
+            <p>Expert Dental Care led by Dr. Anko Hsiao & Kay</p>
             <a href="tel:9495595211" class="btn">Call (949) 559-5211</a>
         </div>
     </section>
@@ -76,48 +80,66 @@
         <span>METLIFE</span> <span>AETNA</span> <span>DELTA DENTAL</span> <span>ANTHEM</span>
     </div>
 
-    <section id="about" class="section-padding about">
-        <div class="about-text">
+    <section id="about" class="section-padding" style="background: white; display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&w=800&q=80" alt="Dr. Anko Hsiao" style="width: 100%; border-radius: 8px;">
+        </div>
+        <div style="flex: 1.5;">
             <h2>Personalized Patient Care</h2>
-            <p>At Cal Dental, we believe in treating patients like family. For over 20 years, Dr. Anko Hsiao and his wife, Kay, have provided the Irvine community with extreme patience and professional care. Unlike large dental groups, we take the time to look into every detail of your health using the latest 3D imaging and laser technology.</p>
-            <p><strong>"All patients are well-cared for, creating a welcoming feeling akin to coming home."</strong></p>
+            <p>For over 25 years, Dr. Anko Hsiao and his wife Kay have provided the Irvine community with extreme patience and professional care. We are a family-owned office that treats every patient like they are coming home.</p>
+            <p><strong>"All patients are well-cared for... unlike some local dental practices where you might feel neglected."</strong></p>
         </div>
     </section>
 
-    <section id="services" class="section-padding">
+    <section id="services" class="section-padding" style="background: var(--light);">
         <h2>Specialized Services</h2>
         <div class="services-grid">
-            <div class="service-card"><h3>Invisalign®</h3><p>Straighten your teeth discreetly with the latest clear aligner technology.</p></div>
+            <div class="service-card"><h3>Invisalign®</h3><p>Discreet clear aligner technology for a perfect smile.</p></div>
             <div class="service-card"><h3>Dental Implants</h3><p>Permanent, natural-looking solutions for missing teeth.</p></div>
-            <div class="service-card) card"><h3>Emergency Care</h3><p>Same-day appointments for pain, extractions, or broken teeth.</p></div>
-            <div class="service-card"><h3>Wisdom Teeth</h3><p>Expert surgical extractions with a focus on patient comfort.</p></div>
+            <div class="service-card"><h3>Emergency Care</h3><p>Same-day appointments for pain or broken teeth.</p></div>
+            <div class="service-card"><h3>Wisdom Teeth</h3><p>Expert surgical extractions for patient comfort.</p></div>
             <div class="service-card"><h3>Root Canals</h3><p>Saving your natural teeth with precision and care.</p></div>
-            <div class="service-card"><h3>Orthodontics</h3><p>Traditional braces and ortho work for all ages.</p></div>
+            <div class="service-card"><h3>Orthodontics</h3><p>Braces and ortho work for all ages.</p></div>
         </div>
     </section>
-<section class="section-padding" style="background: white;">
-    <div style="max-width: 900px; margin: 0 auto;">
-        <h2 style="text-align: left; margin-bottom: 30px;">Common Questions</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-            <div>
-                <h4 style="color: var(--gold); margin-bottom: 10px;">Do you accept my insurance?</h4>
-                <p style="font-size: 0.9rem; color: var(--gray);">We accept most major PPO plans including Delta Dental, MetLife, Aetna, and Anthem. We are happy to help you verify your benefits—just give us a call!</p>
+
+    <section id="results" class="section-padding">
+        <h2>Smile Transformations</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="text-align: center;">
+                <div style="display: flex; gap: 5px; margin-bottom: 10px; justify-content: center;">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&q=80" alt="Before">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=400&q=80" alt="After">
+                </div>
+                <h4 style="color: var(--gold);">Invisalign® Result</h4>
             </div>
-            <div>
-                <h4 style="color: var(--gold); margin-bottom: 10px;">Where should I park?</h4>
-                <p style="font-size: 0.9rem; color: var(--gray);">Our office is located in the Arbor Village center. There is a large, free parking lot directly in front of Suite 125 for your convenience.</p>
-            </div>
-            <div>
-                <h4 style="color: var(--gold); margin-bottom: 10px;">Do you see emergency patients?</h4>
-                <p style="font-size: 0.9rem; color: var(--gray);">Yes! We prioritize dental emergencies like toothaches or broken teeth. Since we are open Sundays, we are often available when other offices are closed.</p>
-            </div>
-            <div>
-                <h4 style="color: var(--gold); margin-bottom: 10px;">Are you family owned?</h4>
-                <p style="font-size: 0.9rem; color: var(--gray);">Yes, Cal Dental has been owned and operated by our family for over 25 years. You will always see the same friendly faces at every visit.</p>
+            <div class="gallery-item" style="text-align: center;">
+                <div style="display: flex; gap: 5px; margin-bottom: 10px; justify-content: center;">
+                    <img src="https://images.unsplash.com/photo-1593022356769-11f09a79a5ca?auto=format&fit=crop&w=400&q=80" alt="Before">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=400&q=80" alt="After">
+                </div>
+                <h4 style="color: var(--gold);">Ortho Transformation</h4>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="section-padding" style="background: white; border-top: 1px solid #eee;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Common Questions</h2>
+            <div class="services-grid">
+                <div><h4>Insurance?</h4><p>We take most major PPOs (Delta, MetLife, Aetna). Call us to verify!</p></div>
+                <div><h4>Parking?</h4><p>Free, easy parking directly in front of Suite 125.</p></div>
+                <div><h4>Emergencies?</h4><p>Open Sundays! We prioritize same-day emergency visits.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section style="width: 100%; height: 400px; line-height: 0;">
+        <iframe width="100%" height="100%" frameborder="0" style="border:0" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.123456789!2d-117.7663!3d33.6826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcddec8609c289%3A0x7445242468b4964b!2sCal%20Dental!5e0!3m2!1sen!2sus!4v1647200000000!5m2!1sen!2sus" allowfullscreen>
+        </iframe>
+    </section>
+
     <section id="contact" class="section-padding" style="background: var(--light);">
         <div class="contact-container">
             <h2 style="margin-top:0;">Request Appointment</h2>
@@ -125,41 +147,24 @@
                 <input type="text" name="name" placeholder="Patient Name" required>
                 <input type="tel" name="phone" placeholder="Phone Number" required>
                 <input type="email" name="email" placeholder="Email Address">
-                <textarea name="message" rows="4" placeholder="How can we help? (e.g. Requesting a cleaning or Invisalign consult)"></textarea>
-                <button type="submit" class="btn" style="width:100%; border:none; cursor:pointer; margin-top:10px;">Send Message to KK</button>
+                <textarea name="message" rows="4" placeholder="How can we help? (e.g. Cleaning or Invisalign consult)"></textarea>
+                <button type="submit" class="btn" style="width:100%; cursor:pointer;">Send Message to KK</button>
             </form>
         </div>
     </section>
-<section style="width: 100%; height: 400px; line-height: 0;">
-    <iframe 
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        loading="lazy" 
-        allowfullscreen 
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=place_id:ChIJicDJhgbd3IARS5a0aEksXRI">
-    </iframe>
-</section>
+
     <footer>
         <div class="footer-grid">
-            <div>
-                <h4>Visit Us</h4>
-                <p>15435 Jeffrey Rd. Suite 125<br>Irvine, CA 92618</p>
-            </div>
-            <div>
-                <h4>Office Hours</h4>
-                <p>Sun – Fri: 11:00 AM – 6:00 PM<br>Saturday: Closed</p>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <p>Main: (949) 559-5211<br>Email: dekohsiao@gmail.com</p>
-            </div>
+            <div><h4>Visit Us</h4><p>15435 Jeffrey Rd. Suite 125<br>Irvine, CA 92618</p></div>
+            <div><h4>Office Hours</h4><p>Sun – Fri: 11:00 AM – 6:00 PM<br>Saturday: Closed</p></div>
+            <div><h4>Contact</h4><p>Main: (949) 559-5211<br>Email: dekohsiao@gmail.com</p></div>
         </div>
         <div style="border-top: 1px solid #333; padding-top: 20px; text-align: center;">
             &copy; 2026 Cal Dental of Irvine. Family Owned & Operated.
         </div>
     </footer>
+
+    <a href="tel:9495595211" class="mobile-call">📞 Call Now</a>
 
 </body>
 </html>
