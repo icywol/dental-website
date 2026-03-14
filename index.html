@@ -3,26 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irvine Dental Style | Clean Design</title>
+    <title>Dr. Ankohsi | Modern Dental Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; margin: 0; padding: 0; text-align: center; }
-        header { background: #fff; padding: 20px; border-bottom: 1px solid #eee; }
-        .hero { background: #f4f4f4; padding: 100px 20px; }
-        .btn { background: #C5A368; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; }
+        :root { --gold: #C5A368; --dark: #222; --light: #f9f9f9; }
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; }
+        
+        /* Navigation */
+        header { 
+            position: sticky; top: 0; background: white; 
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000;
+        }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.9rem; }
+        
+        /* Hero Section */
+        .hero { 
+            height: 70vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover; background-position: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+        /* Buttons */
+        .btn { background: var(--gold); color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: 600; transition: 0.3s; }
+        .btn:hover { background: #b08f5a; }
+
+        /* Insurance Bar */
+        .insurance { padding: 30px 5%; background: white; display: flex; justify-content: space-around; flex-wrap: wrap; filter: grayscale(1); opacity: 0.6; }
+        .insurance img { height: 25px; margin: 15px; }
+
+        /* Services */
+        .services { padding: 80px 5%; background: var(--light); text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+        /* Contact Form */
+        .contact { padding: 80px 5%; max-width: 600px; margin: 0 auto; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
     </style>
 </head>
 <body>
 
     <header>
-        <strong>Your Logo Here</strong>
+        <div style="font-weight: 700; font-size: 1.4rem; letter-spacing: -1px;">DR. ANKOHSI</div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#contact" class="btn">Schedule Now</a>
+        </div>
     </header>
 
-    <div class="hero">
-        <h1>High-End Design, Lower Costs</h1>
-        <p>This is the start of your clean, professional website.</p>
-        <br>
-        <a href="#" class="btn">Schedule Now</a>
+    <section class="hero">
+        <div>
+            <h1>Modern Care, Beautiful Smiles</h1>
+            <p>Experience high-end dentistry at our Irvine office.</p>
+            <a href="tel:9495515888" class="btn">Call (949) 551-5888</a>
+        </div>
+    </section>
+
+    <div class="insurance">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/MetLife_logo.svg" alt="MetLife">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Aetna_logo.svg" alt="Aetna">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Delta_Dental_logo.svg" alt="Delta Dental">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Anthem_logo.svg" alt="Anthem">
     </div>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="grid">
+            <div class="card"><h3>General Dentistry</h3><p>Routine cleanings and exams to keep your smile healthy.</p></div>
+            <div class="card"><h3>Cosmetic Care</h3><p>Whitening, veneers, and bonding for a perfect look.</p></div>
+            <div class="card"><h3>Restorative</h3><p>Implants, crowns, and bridges tailored to you.</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 style="text-align: center;">Request an Appointment</h2>
+        <form name="contact" method="POST" data-netlify="true">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+        </form>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: var(--dark); color: white; font-size: 0.8rem;">
+        <p>&copy; 2026 Dr. Ankohsi Odds Dental Center. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
